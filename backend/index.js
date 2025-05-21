@@ -23,7 +23,7 @@ const __dirname = path.dirname(__filename);
 
 // CORS configuration
 const corsOptions = {
-  origin: ['http://localhost:5173', 'https://localhost:5173'],
+  origin: ['http://localhost:5173', 'https://localhost:5173',https://childrenbookcentre-frontend.onrender.com'],
   credentials: true,
   optionsSuccessStatus: 200
 };
