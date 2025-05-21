@@ -5,7 +5,7 @@ import './index.css';
 import axios from 'axios';
 
 // Set base URL for API requests
-axios.defaults.baseURL = 'http://localhost:5000/api';
+axios.defaults.baseURL = 'https://childrenbookcentre-backend.onrender.com/api';
 axios.defaults.withCredentials = true;
 
 createRoot(document.getElementById('root')).render(
