@@ -2,9 +2,12 @@ import axios from 'axios';
 
 // Create axios instance
 const api = axios.create({
-  baseURL: 'https://childrenbookcentre-backend.onrender.com/api', // Optional: ensure consistent base URL
+  baseURL: import.meta.env.PROD 
+    ? 'https://https://childrenbookcentre-backend.onrender.com/api'  // Production URL
+    : 'http://localhost:5000/api',                      // Development URL
   withCredentials: true,
 });
+
 
 // Add auth token to requests if available
 api.interceptors.request.use(
