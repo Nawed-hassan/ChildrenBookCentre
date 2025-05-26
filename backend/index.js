@@ -23,7 +23,7 @@ const __dirname = path.dirname(__filename);
 
 // CORS configuration
 const corsOptions = {
-  origin: process.env.CORS_ORIGIN ? [process.env.CORS_ORIGIN] : ['http://localhost:5173'],
+  origin: ['http://localhost:5173', 'https://localhost:5173',"https://childrenbookcentre-frontend.onrender.com"],
   credentials: true,
   optionsSuccessStatus: 200
 };
@@ -61,7 +61,7 @@ app.post('/api/upload', upload.single('file'), (req, res) => {
     return res.status(400).json({ message: 'No file uploaded' });
   }
   
-  const filePath = `${process.env.BACKEND_URL || `http://localhost:${PORT}`}/uploads/${req.file.filename}`;
+  const filePath = `http://localhost:${PORT}/uploads/${req.file.filename}`;
   res.status(200).json({ filePath });
 });
 
