@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create axios instance
 const api = axios.create({
-  baseURL: 'https://childrenbookcentre-frontend.onrender.com/api', // Optional: ensure consistent base URL
+  baseURL: 'https://childrenbookcentre-backend.onrender.com/api', // Optional: ensure consistent base URL
   withCredentials: true,
 });
 
