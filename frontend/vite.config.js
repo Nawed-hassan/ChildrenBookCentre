@@ -6,19 +6,15 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: process.env.VITE_API_URL || 'http://localhost:5000',
+        target: 'https://childrenbookcentre-backend.onrender.com',
         changeOrigin: true,
         secure: false,
       },
       '/uploads': {
-        target: process.env.VITE_API_URL || 'http://localhost:5000',
+        target: 'https://childrenbookcentre-backend.onrender.com',
         changeOrigin: true,
         secure: false,
       }
     },
   },
-  build: {
-    outDir: 'dist',
-    assetsDir: 'assets',
-  }
 })
