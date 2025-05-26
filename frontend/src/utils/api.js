@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create axios instance
 const api = axios.create({
-  baseURL: `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api`,
+  baseURL: 'https://childrenbookcentre-frontend.onrender.com/api', // Optional: ensure consistent base URL
   withCredentials: true,
 });
 
@@ -10,12 +10,14 @@ const api = axios.create({
 api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('token');
+
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
+
     return config;
   },
-  (error) => Promise.reject(error)
+  (error) => Promise.reject(error) // Handle request error
 );
 
 // ------------------- Books API -------------------
@@ -57,8 +59,8 @@ export const contactApi = {
 
 // ------------------- Pages API -------------------
 export const pagesApi = {
-  get: () => api.get('/page'),
-  save: (pageData) => api.post('/page', pageData),
+  get: () => api.get('/page'),          // GET hero section
+  save: (pageData) => api.post('/page', pageData),  // POST hero section (create/update)
 };
 
 // ------------------- File Upload -------------------
