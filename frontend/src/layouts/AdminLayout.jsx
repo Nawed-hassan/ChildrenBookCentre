@@ -23,7 +23,7 @@ const AdminLayout = () => {
   }
 
   if (!user) {
-    return <Navigate to="/admin/login" state={{ from: location }} replace />;
+    return <Navigate to="/login" state={{ from: location }} replace />;
   }
 
   return (
@@ -39,28 +39,28 @@ const AdminLayout = () => {
               <FaHome /> <span>Dashboard</span>
             </Link>
           </NavItem>
-          <NavItem isActive={location.pathname.startsWith('/admin/books')}>
-            <Link to="/admin/books">
+          <NavItem isActive={location.pathname.startsWith('/books')}>
+            <Link to="/books">
               <FaBook /> <span>Books</span>
             </Link>
           </NavItem>
-          <NavItem isActive={location.pathname.startsWith('/admin/blog')}>
-            <Link to="/admin/blog">
+          <NavItem isActive={location.pathname.startsWith('/blog')}>
+            <Link to="/blog">
               <FaNewspaper /> <span>Blog</span>
             </Link>
           </NavItem>
-          <NavItem isActive={location.pathname.startsWith('/admin/gallery')}>
-            <Link to="/admin/gallery">
+          <NavItem isActive={location.pathname.startsWith('/gallery')}>
+            <Link to="/gallery">
               <FaImages /> <span>Gallery</span>
             </Link>
           </NavItem>
-          <NavItem isActive={location.pathname.startsWith('/admin/contact')}>
-            <Link to="/admin/contact">
+          <NavItem isActive={location.pathname.startsWith('/contact')}>
+            <Link to="/contact">
               <FaEnvelope /> <span>Messages</span>
             </Link>
           </NavItem>
-          <NavItem isActive={location.pathname.startsWith('/admin/pages')}>
-            <Link to="/admin/pages">
+          <NavItem isActive={location.pathname.startsWith('/pages')}>
+            <Link to="/pages">
               <FaFileAlt /> <span>Pages</span>
             </Link>
           </NavItem>
